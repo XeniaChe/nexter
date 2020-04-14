@@ -3,13 +3,18 @@
     
     &__pictures {
        background-image:linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)) ,url(../img/back.jpg);
+       background-size: cover;
 
         grid-column: full-start/ col-end 4;
-        grid-row: 3/ span 1;
-
         display: grid;
+
+        @include respond(tabl-port-800){
+            grid-column: 1/ -1;
+            padding: 5rem;
+            };
+
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        // grid-template-rows: repeat(6, 1fr);
         align-items: center;
      }
     &__img--1 {
@@ -17,12 +22,22 @@
         grid-row: 2/span 4;
         grid-column: 2/6;
         box-shadow: 0rem  5rem 5rem rgba( #000000,  .3);
+
+        @include respond(tabl-port-800){
+            grid-column: 1 / 5 ;
+            grid-row: 1/ -1;
+            };
     }
     &__img--2 {
         width: 120%;
         grid-row: 4/ 6;
         grid-column: 4/ 7;
         z-index: 20;
+
+        @include respond(tabl-port-800){
+            width: 100%;
+            grid-row: 1/ -1;
+            };
     }
 
 
@@ -35,11 +50,13 @@
         justify-content: center;
         align-items: flex-start;
 
-        // display: grid;
-        // align-content: center;
-        // justify-items: start;
+        @include respond(tabl-port-800){
+            grid-column: 1/ -1;
+            grid-row: 5/ 6;
+            };
 
     }
+
     &__text {
         font-size: 1.5rem;
         font-style: italic;
