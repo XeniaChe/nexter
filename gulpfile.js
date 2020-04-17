@@ -24,12 +24,12 @@ function style() {
    
     return gulp.src('src/scss/styles.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(build + 'css/'))
+    .pipe(gulp.dest(src + 'css/'))
     .pipe(browserSync.stream(browser))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(autoprefixer())
-    .pipe(gulp.dest(build + 'css/'))
+    .pipe(gulp.dest(src + 'css/'))
     // .pipe(notify({message: 'Style task complete'}))
     ;
 }
